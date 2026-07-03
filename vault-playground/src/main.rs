@@ -11,6 +11,10 @@ impl BankVault {
     fn deposit(&mut self, amount: u64) {
         self.balance += amount
     }
+
+    fn withdraw(&mut self, amount: u64) {
+        self.balance -= amount
+    }
 }
 
 fn main() {
@@ -24,4 +28,7 @@ fn main() {
     vault.deposit(1500);
 
     println!("Balance After: {}", vault.get_balance());
+
+    vault.withdraw(1000);
+    println!("Balance after withdrawing 1000: {}", vault.get_balance())
 }
