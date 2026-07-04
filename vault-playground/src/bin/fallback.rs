@@ -5,19 +5,19 @@ fn withdraw(balance: &mut u64, amount: u64) -> Result<(), String> {
 
     *balance -= amount;
 
-    return Ok(());
+    Ok(())
 }
 
 fn main() {
     let mut balance: u64 = 1000;
 
     match withdraw(&mut balance, 300) {
-        Ok(()) => println!("Withdraw 300 succesfull: {}", balance),
+        Ok(()) => println!("Withdrawal of 300 successful: {}", balance),
         Err(e) => println!("Error: {}", e),
     }
 
     match withdraw(&mut balance, 2000) {
-        Ok(()) => println!("Withdraw 2000 succesfull: {}", balance),
+        Ok(()) => println!("Withdrawal of 2000 successful: {}", balance),
         Err(e) => println!("Err: {}", e),
     }
 }

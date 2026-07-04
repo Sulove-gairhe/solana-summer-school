@@ -23,11 +23,11 @@ fn main() {
         balance: 1000,
     };
 
-    println!("Balance Before: {}", vault.get_balance());
+    println!("{}'s balance before: {}", vault.name, vault.get_balance());
 
     vault.deposit(1500);
 
-    println!("Balance After: {}", vault.get_balance());
+    println!("{}'s balance after: {}", vault.name, vault.get_balance());
 
     vault.withdraw(1000);
     println!("Balance after withdrawing 1000: {}", vault.get_balance())
