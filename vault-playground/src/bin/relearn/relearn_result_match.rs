@@ -9,6 +9,15 @@ fn withdraw(balance: &mut u64, amount: u64) -> Result<(), String> {
     Ok(())
 }
 
+fn deposit(balance: &mut u64, amount: u64) -> Result<(), String> {
+    if (*balance + amount) < *balance {
+        return Err(format!("Cannot deposit {amount}; balance would overflow"));
+    }
+
+    *balance += amount;
+    Ok(())
+}
+
 fn main() {
     let mut balance = 700;
 
